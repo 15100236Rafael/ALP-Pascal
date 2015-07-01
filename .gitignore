@@ -1,6 +1,4 @@
 #Ignore executables
 
-*.o
-
 #Ignore executables folder
 executables
