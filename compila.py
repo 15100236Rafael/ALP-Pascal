@@ -1,4 +1,6 @@
 #!/usr/bin/python
+#Script to move a copy of the source code and
+#compile the file also ereaseing the copy of the source
 from subprocess import call
 import shutil
 progName = raw_input("Input sourcecode name: ")
