@@ -4,7 +4,7 @@ USES crt;
 VAR j,i,n,k,c : INTEGER;
     cards: ARRAY [1..6] OF INTEGER;
 BEGIN
-    Writeln('Type 6 whole numbers:');
+    Writeln('Type 6 whole numbers for sorting:');
     FOR c:=1 TO 6 DO
         Read(cards[c]);
     FOR i:= 1 TO 6 DO
