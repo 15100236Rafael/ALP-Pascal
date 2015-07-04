@@ -1,4 +1,5 @@
-{Program to calculate the fatorial from a whole number}
+{Program to calculate the fatorial from a whole number
+Author: Rafael.Santos}
 
 PROGRAM fatCalc;
 VAR

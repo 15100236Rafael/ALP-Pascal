@@ -1,4 +1,6 @@
-{Sort numbers}
+{Sort numbers
+Author: Rafael.Santos}
+
 PROGRAM sortNumbers;
 USES crt;
 VAR j,i,n,k,c : INTEGER;

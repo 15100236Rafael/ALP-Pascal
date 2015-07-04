@@ -1,4 +1,5 @@
-{Program to combine an array of 6 numbers in groups of four}
+{Program to combine an array of 6 numbers in groups of four
+Author: Rafael.Santos}
 PROGRAM combina4;
 VAR a, b, c, d, e: INTEGER;
     seq: ARRAY [1..6] OF INTEGER;

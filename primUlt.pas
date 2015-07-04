@@ -1,4 +1,6 @@
-{Test Program}
+{Test Program
+Author: Rafael.Santos}
+
 PROGRAM prog1;
 
 VAR

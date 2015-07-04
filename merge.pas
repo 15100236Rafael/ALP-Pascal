@@ -1,5 +1,7 @@
 {Program to merge Vectors into one}
-{Program to merge vectors}
+{Program to merge vectors
+Author: Rafael.Santos}
+
 PROGRAM mergeVect;
 VAR
     vet1, vet2, vet3: ARRAY [1..4] OF integer;

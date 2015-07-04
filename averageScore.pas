@@ -1,5 +1,6 @@
 {Program to calculate the average score from
-ADS students v 0.0.1}
+ADS students v 0.0.1
+Author: Rafael.Santos}
 PROGRAM average_score;
 USES crt;
 VAR p1, p2, aver: DOUBLE;
