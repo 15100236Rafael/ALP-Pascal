@@ -1,8 +1,6 @@
 {Sort numbers
 Author: Rafael.Santos}
-
 PROGRAM sortNumbers;
-USES crt;
 VAR j,i,n,k,c : INTEGER;
     cards: ARRAY [1..6] OF INTEGER;
 BEGIN

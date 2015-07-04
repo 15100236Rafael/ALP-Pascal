@@ -14,18 +14,23 @@ PROCEDURE criaVet(VAR vet: ARRAY OF integer);
     VAR
         i: integer;
     BEGIN
-    FOR i:= 1 TO 4 DO
-        vet[i]:= random(30)+1;
-    writeln(vet[1],' ',vet[2],' ',vet[3],' ',vet[4],'.');
+    FOR i:= 1 TO length(vet) DO
+        BEGIN
+            vet[i]:= random(30)+1;
+            write(vet[i],' ');
+        END;
     END;
 BEGIN
     write('First Vector:');
     criaVet(vet1);
+    writeln();
     write('Second Vector:');
     criaVet(vet2);
+    writeln();
     write('Third Vector:');
     criaVet(vet3);
-    j:= 1; k:= 1; l:= 1; m:= 1;
+    writeln();
+    {j:= 1; k:= 1; l:= 1; m:= 1;
 
     WHILE m < 13 DO
         BEGIN
@@ -42,9 +47,10 @@ BEGIN
             m:= m+1;
         END;
     FOR i:=1 TO 12 DO
+        write(vet4[i],' ');
         BEGIN
             IF vet4[i]<>0 THEN write(vet4[i],' ');
-        END;
+        END;}
     Readln();
 
 END.
