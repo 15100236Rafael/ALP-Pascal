@@ -6,7 +6,8 @@ PROGRAM mergeVect;
 VAR
     vet1, vet2, vet3: ARRAY [1..4] OF integer;
     vet4: ARRAY [1..12] OF integer;
-    i, j, k, l, m, min: integer;
+    j, k, l, m, min: integer;
+    vet4 := (0,0,0,0,0,0,0,0,0,0,0,0);
 
 {Todo : sort the small vectors
 Create the procedure to sorte the small vectors}
@@ -20,6 +21,24 @@ PROCEDURE criaVet(VAR vet: ARRAY OF integer);
             write(vet[i],' ');
         END;
     END;
+PROCEDURE sortVet(VAR vet: ARRAY OF integer);
+    VAR j,i,k : INTEGER;
+    BEGIN
+        FOR i:= 1 TO length(vet) DO
+            BEGIN
+                FOR j:=i+1 TO length(vet) DO
+                    BEGIN
+                        IF vet[i] > vet[j] THEN
+                            BEGIN
+                                k:= vet[i];
+                                vet[i]:= vet[j];
+                                vet[j]:= k;
+                            END;
+                    END;
+            IF vet[i] <> 0 THEN write(vet[i],' ')
+                        ELSE write('');
+            END;
+    END;
 BEGIN
     write('First Vector:');
     criaVet(vet1);
@@ -29,10 +48,10 @@ BEGIN
     writeln();
     write('Third Vector:');
     criaVet(vet3);
-    writeln();
-    {j:= 1; k:= 1; l:= 1; m:= 1;
 
-    WHILE m < 13 DO
+    j:= 1; k:= 1; l:= 1; m:= 1;
+
+    WHILE m < length(vet4) DO
         BEGIN
             min:= vet1[j];
             IF vet2[k] < min THEN min:= vet2[k];
@@ -42,15 +61,13 @@ BEGIN
             IF vet2[k] = min THEN k:= k+1;
             IF vet3[l] = min THEN l:= l+1;
 
-
             vet4[m]:= min;
             m:= m+1;
         END;
-    FOR i:=1 TO 12 DO
-        write(vet4[i],' ');
+    j:=1;
+    WHILE vet4[j] <> 0 DO
         BEGIN
-            IF vet4[i]<>0 THEN write(vet4[i],' ');
-        END;}
+            write(vet4[j],' ');
+        END;
     Readln();
-
 END.
