@@ -6,8 +6,7 @@ PROGRAM mergeVect;
 VAR
     vet1, vet2, vet3: ARRAY [1..4] OF integer;
     vet4: ARRAY [1..12] OF integer;
-    j, k, l, m, min: integer;
-    vet4 := (0,0,0,0,0,0,0,0,0,0,0,0);
+    {i,}j, k, l, m, min: integer;
 
 {Todo : sort the small vectors
 Create the procedure to sorte the small vectors}
@@ -22,8 +21,9 @@ PROCEDURE criaVet(VAR vet: ARRAY OF integer);
         END;
     END;
 PROCEDURE sortVet(VAR vet: ARRAY OF integer);
-    VAR j,i,k : INTEGER;
+    VAR i,j,k : INTEGER;
     BEGIN
+    k:= 0;
         FOR i:= 1 TO length(vet) DO
             BEGIN
                 FOR j:=i+1 TO length(vet) DO
@@ -35,8 +35,7 @@ PROCEDURE sortVet(VAR vet: ARRAY OF integer);
                                 vet[j]:= k;
                             END;
                     END;
-            IF vet[i] <> 0 THEN write(vet[i],' ')
-                        ELSE write('');
+            IF vet[i] <> 0 THEN write(vet[i],' ');
             END;
     END;
 BEGIN
@@ -48,6 +47,7 @@ BEGIN
     writeln();
     write('Third Vector:');
     criaVet(vet3);
+    writeln();
 
     j:= 1; k:= 1; l:= 1; m:= 1;
 
@@ -64,10 +64,13 @@ BEGIN
             vet4[m]:= min;
             m:= m+1;
         END;
-    j:=1;
-    WHILE vet4[j] <> 0 DO
-        BEGIN
-            write(vet4[j],' ');
-        END;
+    writeln();
+    sortVet(vet4);
+    {i:=1;
+    WHILE i <= length(vet4) DO
+            BEGIN
+            write(vet4[i],' ');
+            i := i+1;
+            END;}
     Readln();
 END.
