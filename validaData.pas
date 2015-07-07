@@ -3,6 +3,7 @@ Author: Rafael.Santos}
 PROGRAM validaData;
 VAR
     d,m,a, valid: INTEGER;
+    resp: char;
     c: ARRAY[1..12] OF INTEGER;
 BEGIN
     {inicializa dias do mês}
@@ -34,9 +35,11 @@ BEGIN
                 END
             ELSE valid:= 0;
             IF valid:=1 THEN
-                Writeln('Data inválida.');
-                Writeln('Deseja corrigir?');
-                IF
-
+                while (resp <> 's') and (resp <> 'n') or (resp <> 'S') and (resp <> 'N') do
+                     BEGIN
+                        Writeln('Data inválida.');
+                        Writeln('Deseja corrigir? (s/n)');
+                        readln(resp);
+                        end;
         END;
 END.
