@@ -1,0 +1,103 @@
+{ENUNCIADO:
+Elabore um algoritmo que leia 3 vetores, ja coordenados ascendentemente, com
+no maximo 10 elementos cada um, sendo o ultimo elemento igual a 999 e preencha
+um 4§ vetor com os dados dos 3 vetores de entrada, ordenado ascendentemente e
+terminado por 999. Em caso de elementos iguais nos 3 vetores, gravar apenas 1
+deles no vetor de saida.}
+
+
+program merge_3_vet;
+
+var vet1: array [1..10] of integer;   {a -> indice do vet1}
+    vet2: array [1..10] of integer;   {b -> indice do vet2}
+    vet3: array [1..10] of integer;   {c -> indice do vet3}
+    vetX: array [1..30] of integer;   {x -> indice do vetX}
+    menor: integer;
+    i, a, b, c, x, num : integer;
+
+begin
+
+{Cria-se os 3 vetores - espera-se numeros em ordem crescente para cada um}
+writeln ('Informe o primeiro vetor - max 10 elementos - use 999 como ultimo elemento.');
+i:=1;
+while (i <= 10) and (num <> 999) do
+      begin
+      readln(num);
+      vet1[i]:= num;
+      i:= i+1; {11 sera o ultimo valor e nao satisfazera o 'while'}
+      end;
+writeln(); {pula uma linha apenas}
+{____________________________________________________________________________}
+
+
+writeln ('Informe o segundo vetor - max 10 elementos - use 999 como ultimo elemento.');
+i:=1; num:=0; {reiniciados para o 'while' do proximo vetor}
+
+while (i <= 10) and (num <> 999) do
+      begin
+      readln(num);
+      vet2[i]:= num;
+      i:= i+1; {11 sera o ultimo valor e nao satisfazera o 'while'}
+      end;
+writeln(); {pula uma linha apenas}
+{____________________________________________________________________________}
+
+writeln ('Informe o terceiro vetor - max 10 elementos - use 999 como ultimo elemento.');
+i:=1; num:=0; {reiniciados para o 'while' do proximo vetor}
+
+while (i <= 10) and (num <> 999) do
+      begin
+      readln(num);
+      vet3[i]:= num;
+      i:= i+1; {11 sera o ultimo valor e nao satisfazera o 'while'}
+      end;
+{____________________________________________________________________________}
+
+menor := 0; {iniciado para a condicao do 'while'}
+
+{--iniciado o valor dos indices--}
+a := 1; b := 1; c := 1; x := 1;
+
+{
+NOTAS:
+1. Cada volta desse loop insere um elemento no vetX.
+
+2. As condicionais verificam em qual vetor encontra-se o menor valor. Isso,
+   serve para colocar vetX em ordem crescente.
+
+3. Se em um loop verifica-se 2 ou mais indices de mesmo valor o vetX pega
+   o  valor em questao e  todos os vetores  que o contem  tem seu  indice
+   acrescentado em +1, evitando assim repeticao de elementos iguais.
+}
+
+while menor <> 999 do
+begin
+      menor:= vet1[a];
+
+      if vet2[b] < menor then  menor:= vet2[b];
+      if vet3[c] < menor then  menor:= vet3[c];
+
+      if vet1[a] = menor then  a:= a+1;
+      if vet2[b] = menor then  b:= b+1;
+      if vet3[c] = menor then  c:= c+1;
+
+      vetX[x]:= menor;
+      x:= x+1;
+end;
+{____________________________________________________________________________}
+
+
+{Mostrando cada elemento do vetX}
+
+x:=1;
+
+while x < 30 do
+        begin
+
+        write (vetX[x], ' ');
+        x:= x+1;
+        if vetX[x] = 999 then {verifica-se se foi mostrado o ultimo elemento}
+        x:= 30;               {torna i = 30 para sair do loop}
+        end;
+readln(); {"trava" a tela para leitura}
+end.

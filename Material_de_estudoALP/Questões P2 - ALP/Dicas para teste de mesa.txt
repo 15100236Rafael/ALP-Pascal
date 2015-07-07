@@ -1,0 +1,40 @@
+Para resolver bem esse tipo de exercício basta fazer marcações para não se perder.
+
+- em um rascunho anote os valores das variáveis, e quando o valor for modificado
+coloque o novo valor na frente (ou em baixo se estiver organizado em coluna).
+
+- Enumere os Ifs e elses e marque linhas os ligando. Isso ajuda visualmente.
+  Atenção quando não há begin o If só terá um comando e finalizará sua estrutura,
+  sendo o que vem depois não será parte de seu escopo.
+
+  Note que no exemplo abaixo se o primeiro if for falso você pula direto pro último else.
+
+
+|-----> If ... Then ---> If 1
+| |---> If ... Then ---> If 2
+| | |-> If ... THen ---> If 3
+| | |   begin
+| | |   ...
+| | |   ...
+| | |   end
+| | |-> else ----------> else do If 3
+| |     ... 
+| |---> else ----------> else do If 2
+|       ...
+|-----> else ----------> else do If 1
+        ...
+
+- E por fim não se esqueça da ordem de prioridade dos operadores.
+Abaixo uma tabela retirada da apostila.
+  ______________________________
+  |PRIORIDADE |   Operadores   |
+  |    1      |       Not      |
+  |    2      | *,/,div,mod,and|
+  |    3      |   +,-,or,xor   |
+  |    4      | =,<>,<,<=,>=,> |
+  ------------------------------
+
+
+
+
+

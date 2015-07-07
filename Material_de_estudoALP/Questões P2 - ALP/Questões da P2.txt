@@ -1,0 +1,9 @@
+1. Verificar se o primeiro e o último dígito de um número são iguais ou não.
+
+2. validação de data com interatividade com o usuario.
+
+3. combinar n numeros p a p.
+
+4. merge de vetores.
+
+5. teste de mesa com laço (repetição).

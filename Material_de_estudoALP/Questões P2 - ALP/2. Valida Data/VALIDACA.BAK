@@ -1,0 +1,49 @@
+program data_val;
+var dia, mes, ano, m29, ind_erro: integer;
+    SimNao: char;
+
+begin
+
+ind_erro := 0;
+while ind_erro = 0  do
+begin
+
+m29:=28;
+ind_erro:= 0;
+writeln ('informe o dia, o mes e o ano');
+readln (dia); readln (mes); readln (ano);
+
+if (ano mod 4)   = 0 then m29:= 29;
+if (ano mod 100) = 0 then m29 :=28;
+if (ano mod 400) = 0 then m29 :=29;
+
+if (dia < 01) or (dia > 31) or (mes < 01) or (mes > 12) or (ano < 1) then
+ind_erro := 1;
+
+if ((mes = 04) or (mes = 06) or (mes = 09) or (mes = 11))
+   and (dia > 30) then ind_erro := 1;
+
+if (mes = 02) and (dia > m29) then
+   ind_erro := 1;
+
+if ind_erro = 0 then
+   writeln ('data valida')
+else
+begin
+writeln ('data invalida');
+writeln ('Gostaria de corrigir a data digitada?(s/n)');
+readln(SimNao);
+
+while (SimNao <> 's') and (SimNao <> 'n') do
+   Begin
+   writeln('Tecla invalida. Gostaria de corrigir a data digitada?(s/n)');
+   readln (SimNao);
+   end;
+
+if SimNao = 's' Then
+ind_erro := 0;
+
+end; {Fim do ind_erro =1}
+end.
+
+
